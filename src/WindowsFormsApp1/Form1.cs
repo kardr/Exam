@@ -37,81 +37,82 @@ namespace WindowsFormsApp1
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show(
-        "Дроздова Карина Александровна",
-        "Информация об авторе",
-        MessageBoxButtons.OK,
-        MessageBoxIcon.Information,
-        MessageBoxDefaultButton.Button1,
-        MessageBoxOptions.DefaultDesktopOnly);
+            "Дроздова Карина Александровна",
+            "Информация об авторе",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Information,
+            MessageBoxDefaultButton.Button1,
+            MessageBoxOptions.DefaultDesktopOnly);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            string t = System.IO.Path.GetFileName(s);
-
-            double x, y;
-            x = Convert.ToDouble(textBox1.Text);
-            y = Convert.ToDouble(textBox2.Text);
-            if (t == "str1.html")
+            try
             {
+                string t = System.IO.Path.GetFileName(s);
 
-
-                if ((x >= -2 && x <= 3 && y >= 2 && y <= 5) || (x >= 3 && x <= 5 && y >= 2 && y <= 3))
+                double x, y;
+                x = Convert.ToDouble(textBox1.Text);
+                y = Convert.ToDouble(textBox2.Text);
+                if (t == "str1.html")
                 {
-                    MessageBox.Show(
-            "Принадлежит",
-            "Информация",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information,
-            MessageBoxDefaultButton.Button1,
-            MessageBoxOptions.DefaultDesktopOnly);
-                    toolStripStatusLabel2.Text = "Принадлежит";
 
+
+                    if ((x >= -2 && x <= 3 && y >= 2 && y <= 5) || (x >= 3 && x <= 5 && y >= 2 && y <= 3))
+                    {
+                        MessageBox.Show(
+                        "Принадлежит",
+                        "Информация",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information,
+                        MessageBoxDefaultButton.Button1,
+                        MessageBoxOptions.DefaultDesktopOnly);
+                        toolStripStatusLabel2.Text = "Принадлежит";
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                        "Не принадлежит",
+                        "Информация",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information,
+                        MessageBoxDefaultButton.Button1,
+                        MessageBoxOptions.DefaultDesktopOnly);
+                        toolStripStatusLabel2.Text = "Не принадлежит";
+                    }
                 }
-                else
+                else if (t == "str2.html")
                 {
-                    MessageBox.Show(
-            "Не принадлежит",
-            "Информация",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information,
-            MessageBoxDefaultButton.Button1,
-            MessageBoxOptions.DefaultDesktopOnly);
-                    toolStripStatusLabel2.Text = "Не принадлежит";
+                    if ((y <= 0 && (x * x + y * y) >= 1) || (y >= 0 && x * x <= y))
+                    {
+                        MessageBox.Show(
+                        "Принадлежит",
+                        "Информация",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information,
+                        MessageBoxDefaultButton.Button1,
+                        MessageBoxOptions.DefaultDesktopOnly);
+                        toolStripStatusLabel2.Text = "Принадлежит";
+
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                        "Не принадлежит",
+                        "Информация",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information,
+                        MessageBoxDefaultButton.Button1,
+                        MessageBoxOptions.DefaultDesktopOnly);
+                        toolStripStatusLabel2.Text = "Не принадлежит";
+                    }
                 }
             }
-            else if(t== "str2.html")
+            catch (Exception E)
             {
-                if ((y<=0 && (x*x+y*y)>=1) || (y>=0 && x*x<=y))
-                {
-                    MessageBox.Show(
-            "Принадлежит",
-            "Информация",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information,
-            MessageBoxDefaultButton.Button1,
-            MessageBoxOptions.DefaultDesktopOnly);
-                    toolStripStatusLabel2.Text = "Принадлежит";
-
-                }
-                else
-                {
-                    MessageBox.Show(
-            "Не принадлежит",
-            "Информация",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Information,
-            MessageBoxDefaultButton.Button1,
-            MessageBoxOptions.DefaultDesktopOnly);
-                    toolStripStatusLabel2.Text = "Не принадлежит";
-                }
+                MessageBox.Show(E.Message);
             }
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
