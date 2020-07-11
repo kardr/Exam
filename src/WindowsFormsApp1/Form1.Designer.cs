@@ -78,7 +78,7 @@
             // 
             // выходToolStripMenuItem
             // 
-            this.выходToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.выходToolStripMenuItem.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
             this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.выходToolStripMenuItem.Text = "Выход";

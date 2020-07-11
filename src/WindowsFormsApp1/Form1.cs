@@ -20,12 +20,18 @@ namespace WindowsFormsApp1
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                s = openFileDialog1.FileName;
-                webBrowser1.Url = new Uri(s);
-                this.Width = 800;
-
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    s = openFileDialog1.FileName;
+                    webBrowser1.Url = new Uri(s);
+                    this.Width = 800;
+                }
+            }
+            catch (Exception E)
+            {
+                MessageBox.Show(E.Message);
             }
         }
 
